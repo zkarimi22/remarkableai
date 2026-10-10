@@ -1,0 +1,17 @@
+[Unit]
+Description=Handwritten questions and OpenRouter replies on reMarkable
+After=xochitl.service network.target
+
+[Service]
+Type=simple
+User=root
+Environment=HOME=/home/root
+ExecStart=/home/root/.local/remarkableai/remarkableai
+WorkingDirectory=/home/root/.local/remarkableai
+Restart=on-failure
+RestartSec=10
+UMask=0077
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

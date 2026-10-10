@@ -1,0 +1,6 @@
+__pycache__/
+artifacts/
+.env
+config.json
+bin/*
+!bin/.gitkeep
