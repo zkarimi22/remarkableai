@@ -42,7 +42,7 @@ def main():
             for source, target in zip(files, ["remarkableai", "type-text-rm2", "remarkableai.service"]):
                 subprocess.run(["scp", "-O", *options, str(source), TABLET+":"+REMOTE+"/"+target], check=True)
             if key:
-                config = json.dumps({"api_key": key, "model": "google/gemini-2.5-flash", "timezone": "America/Vancouver"})
+                config = json.dumps({"api_key": key, "model": "deepseek/deepseek-v4.1-flash", "timezone": "America/Vancouver"})
                 remote("umask 077; cat > /home/root/.config/remarkableai/config.json.new && "
                        "mv /home/root/.config/remarkableai/config.json.new /home/root/.config/remarkableai/config.json",
                        input=config.encode())
